@@ -12,29 +12,41 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Nunito", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #012970; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #4154f1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #444444;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #012970;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #4154f1;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #012970;  /* The default color of the main navmenu links */
-  --nav-hover-color: #4154f1; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #4154f1; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #012970;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #4154f1;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #212529;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #4154f1;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -164,6 +176,23 @@ h6 {
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
+}
+
+.header .logo .sitename {
+  white-space: nowrap;
+  padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .header .logo h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo h1 {
+    font-size: 16px;
+  }
 }
 
 .header .btn-getstarted,
@@ -738,8 +767,7 @@ h6 {
 }
 
 .page-title .heading {
-  padding: 80px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 40px 0 60px 0;
 }
 
 .page-title .heading h1 {
@@ -749,7 +777,8 @@ h6 {
 
 .page-title nav {
   background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-  padding: 20px 0;
+  padding: 100px 0 20px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .page-title nav ol {
@@ -995,28 +1024,61 @@ section,
 .values .card {
   background-color: var(--surface-color);
   color: var(--default-color);
-  padding: 30px;
-  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: 0.3s;
+  transition: all 0.4s ease;
   height: 100%;
-  border: 0;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 95%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .values .card img {
-  padding: 30px 50px;
+  padding: 0 20px 30px 20px;
   transition: 0.5s;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  max-width: 100%;
 }
 
 .values .card h3 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.values .card h3::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--accent-color);
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.values .card p {
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.values .card p:last-child {
+  margin-bottom: 0;
 }
 
 .values .card:hover {
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
 }
 
 .values .card:hover img {
@@ -1116,28 +1178,46 @@ section,
 --------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
   height: 100%;
-  padding: 60px 30px;
+  padding: 50px 30px;
   text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.services .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .services .service-item .icon {
-  font-size: 36px;
-  padding: 20px 20px;
-  border-radius: 4px;
+  font-size: 38px;
+  padding: 15px;
+  border-radius: 10px;
   position: relative;
   margin-bottom: 25px;
   display: inline-block;
   line-height: 0;
-  transition: 0.3s;
+  transition: all 0.4s ease;
+}
+
+.services .service-item:hover .icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .services .service-item h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.services .service-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 .services .service-item .read-more {
@@ -1168,8 +1248,13 @@ section,
   color: #0dcaf0;
 }
 
-.services .service-item.item-cyan:hover {
+.services .service-item.item-cyan:hover h3 {
+  color: #0dcaf0;
+}
+
+.services .service-item.item-cyan:hover .icon {
   background: #0dcaf0;
+  color: #fff;
 }
 
 .services .service-item.item-orange {
@@ -1185,8 +1270,13 @@ section,
   color: #fd7e14;
 }
 
-.services .service-item.item-orange:hover {
+.services .service-item.item-orange:hover h3 {
+  color: #fd7e14;
+}
+
+.services .service-item.item-orange:hover .icon {
   background: #fd7e14;
+  color: #fff;
 }
 
 .services .service-item.item-teal {
@@ -1202,8 +1292,13 @@ section,
   color: #20c997;
 }
 
-.services .service-item.item-teal:hover {
+.services .service-item.item-teal:hover h3 {
+  color: #20c997;
+}
+
+.services .service-item.item-teal:hover .icon {
   background: #20c997;
+  color: #fff;
 }
 
 .services .service-item.item-red {
@@ -1219,8 +1314,13 @@ section,
   color: #df1529;
 }
 
-.services .service-item.item-red:hover {
+.services .service-item.item-red:hover h3 {
+  color: #df1529;
+}
+
+.services .service-item.item-red:hover .icon {
   background: #df1529;
+  color: #fff;
 }
 
 .services .service-item.item-indigo {
@@ -1236,8 +1336,13 @@ section,
   color: #6610f2;
 }
 
-.services .service-item.item-indigo:hover {
+.services .service-item.item-indigo:hover h3 {
+  color: #6610f2;
+}
+
+.services .service-item.item-indigo:hover .icon {
   background: #6610f2;
+  color: #fff;
 }
 
 .services .service-item.item-pink {
@@ -1253,19 +1358,16 @@ section,
   color: #f3268c;
 }
 
-.services .service-item.item-pink:hover {
-  background: #f3268c;
+.services .service-item.item-pink:hover h3 {
+  color: #f3268c;
 }
 
-.services .service-item:hover h3,
-.services .service-item:hover p,
-.services .service-item:hover .read-more {
+.services .service-item.item-pink:hover .icon {
+  background: #f3268c;
   color: #fff;
 }
 
-.services .service-item:hover .icon {
-  background: #fff;
-}
+/* Removed legacy hover rules that were causing text to disappear */
 
 /*--------------------------------------------------------------
 # Pricing Section
@@ -1670,6 +1772,13 @@ section,
 .team .team-member .member-img {
   position: relative;
   overflow: hidden;
+  height: 350px;
+}
+
+.team .team-member .member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .team .team-member .member-img:after {
@@ -1717,6 +1826,7 @@ section,
 
 .team .team-member .member-info {
   padding: 10px 15px 20px 15px;
+  min-height: 180px;
 }
 
 .team .team-member .member-info h4 {
@@ -2127,9 +2237,9 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
+/* .starter-section {
   /* Add your styles here */
-}
+/* } */
 
 /*--------------------------------------------------------------
 # Blog Posts Section
@@ -2764,4 +2874,608 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+
+/* Gallery kanan */
+/* --- FASILITAS SECTION REFINEMENTS --- */
+
+/* Align left and right columns to the top */
+#alt-features .row.gy-5,
+#alt-features .col-xl-5,
+#alt-features .col-xl-7 {
+  align-items: flex-start !important;
+  align-self: flex-start !important;
+}
+
+/* Ensure no default margin/padding pushes the grid down */
+#alt-features .facility-grid,
+#alt-features .alt-features-img {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* KIRI: Icon Box Interactivity */
+#alt-features .icon-box {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 94%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#alt-features .icon-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-color);
+}
+
+#alt-features .icon-box i {
+  font-size: 32px;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+#alt-features .icon-box:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+#alt-features .icon-box h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+#alt-features .icon-box:hover h4 {
+  color: var(--accent-color);
+}
+
+#alt-features .icon-box p {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* KANAN: Facility Grid & Cards */
+.facility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.facility-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.facility-card.big {
+  grid-column: 1 / 3;
+  height: 250px;
+}
+
+.facility-card:not(.big) {
+  height: 200px;
+}
+
+.facility-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.facility-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  color: #fff;
+  transition: background 0.4s ease;
+}
+
+.facility-overlay h6 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.facility-overlay p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+/* Hover Effects for Right Side */
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.facility-card:hover img {
+  transform: scale(1.1);
+}
+
+.facility-card:hover .facility-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 70%, transparent 100%);
+}
+
+.facility-card:hover .facility-overlay h6 {
+  transform: translateY(0);
+}
+
+.facility-card:hover .facility-overlay p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive: hp jadi 1 kolom */
+@media (max-width: 991px) {
+  .facility-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-top: 20px;
+  }
+
+  .facility-card.big {
+    grid-column: auto;
+    height: 220px;
+  }
+
+  .facility-card {
+    height: 200px;
+  }
+}
+
+/* Custom UI Refinements */
+.values .card p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.values .card h3 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+}
+
+.page-title .heading {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%), color-mix(in srgb, var(--accent-color), transparent 98%));
+}
+
+.hero .btn-get-started:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Ensure mobile nav toggle doesn't show randomly on desktop */
+@media (min-width: 1200px) {
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+}
+
+/* === Mobile header fix === */
+@media (max-width: 576px) {
+
+  /* jangan sampai header wrap ke 2 baris dengan cara aneh */
+  .header .container-fluid {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  /* logo + nama kampus jangan makan tempat */
+  .header .logo {
+    min-width: 0;
+    /* penting untuk ellipsis */
+  }
+
+  .header .logo .sitename {
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 210px;
+    /* bisa kamu kecil/besarkan */
+  }
+
+  /* tombol daftar bikin sesak di mobile -> sembunyikan */
+  .header .btn-getstarted {
+    display: none;
+  }
+
+  /* pastikan hamburger tampil rapi di kanan */
+  .mobile-nav-toggle {
+    margin-left: auto;
+    font-size: 28px;
+    /* opsional */
+  }
+}
+
+/* Akreditasi Section */
+.akreditasi-img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+}
+
+/* Mobile fix */
+@media (max-width: 576px) {
+  .akreditasi-img {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* === Kurikulum UI === */
+.kurikulum-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0 10px;
+}
+
+.kurikulum-select {
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 10px;
+  min-width: 180px;
+}
+
+.kurikulum-btn {
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  background: #fff;
+  border-radius: 10px;
+}
+
+.kurikulum-summary {
+  margin: 10px 0 18px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 12px;
+}
+
+.kurikulum-card {
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.kurikulum-card-header {
+  padding: 12px 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+}
+
+.kurikulum-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.kurikulum-table th,
+.kurikulum-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, .06);
+  vertical-align: top;
+}
+
+.kurikulum-table th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.kurikulum-kode {
+  white-space: nowrap;
+}
+
+.kurikulum-sks {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Mobile: tabel jadi lebih nyaman */
+@media (max-width: 576px) {
+  .kurikulum-table thead {
+    display: none;
+  }
+
+  .kurikulum-table tr {
+    display: block;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+  }
+
+  .kurikulum-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border: 0;
+    padding: 6px 0;
+  }
+
+  .kurikulum-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+  }
+
+  .kurikulum-sks {
+    text-align: right;
+  }
+}
+
+/* === Penempatan Magang === */
+.magang-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0 18px;
+}
+
+.magang-search {
+  flex: 1;
+  min-width: 240px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 10px;
+}
+
+.magang-count {
+  font-size: 14px;
+  opacity: .75;
+}
+
+.magang-accordion .accordion-item {
+  border: 0;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.magang-accordion .accordion-button {
+  background: #f1f1f1;
+  font-weight: 700;
+}
+
+.magang-accordion .accordion-button:focus {
+  box-shadow: none;
+}
+
+.magang-accordion .accordion-body {
+  background: #fff;
+}
+
+.magang-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.magang-table th,
+.magang-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+  vertical-align: top;
+}
+
+.magang-table th {
+  white-space: nowrap;
+}
+
+/* Mobile: tabel jadi card */
+@media (max-width: 576px) {
+  .magang-table thead {
+    display: none;
+  }
+
+  .magang-table tr {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+  }
+
+  .magang-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+    border: 0;
+  }
+
+  .magang-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+  }
+}
+
+/* === Beasiswa Page === */
+.beasiswa-wrap {
+  background: #f1f1f1;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.beasiswa-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.beasiswa-tab {
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #e7e7e7;
+  font-weight: 700;
+}
+
+.beasiswa-tab.active {
+  background: #ff6a00;
+  color: #fff;
+}
+
+.beasiswa-panel {
+  display: none;
+}
+
+.beasiswa-panel.active {
+  display: block;
+}
+
+.beasiswa-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.beasiswa-card h3 {
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.beasiswa-cta {
+  display: flex;
+  justify-content: center;
+  padding: 14px 0 6px;
+}
+
+/* Wrapper per semester */
+.semester-block {
+  margin-bottom: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Bar judul semester */
+.semester-title {
+  padding: 14px 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Warna berbeda tiap semester */
+.semester-1 .semester-title {
+  background: #6c757d;
+}
+
+/* abu */
+.semester-2 .semester-title {
+  background: #0d6efd;
+}
+
+/* biru */
+.semester-3 .semester-title {
+  background: #198754;
+}
+
+/* hijau */
+.semester-4 .semester-title {
+  background: #fd7e14;
+}
+
+/* orange */
+.semester-5 .semester-title {
+  background: #6f42c1;
+}
+
+/* ungu */
+.semester-6 .semester-title {
+  background: #20c997;
+}
+
+/* teal */
+.semester-7 .semester-title {
+  background: #dc3545;
+}
+
+/* merah */
+.semester-8 .semester-title {
+  background: #212529;
+}
+
+/* hitam */
+
+/* Table rapi */
+.semester-block table {
+  margin: 0;
+}
+
+.semester-block thead th {
+  background: #f8f9fa;
+  font-weight: 700;
+}
+
+.semester-block td,
+.semester-block th {
+  padding: 14px 16px;
+  vertical-align: middle;
+}
+
+/* Kolom SKS biar rapih */
+.semester-block .col-sks {
+  width: 140px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.semester-block {
+  margin: 28px 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.semester-title {
+  padding: 14px 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.semester-meta {
+  padding: 10px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.75);
 }
